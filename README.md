@@ -2,7 +2,7 @@
 
 ## Project
 
-**Healthcare Clinic Network** — design, deploy, and operate a secure, resilient, and auditable network for a two-branch healthcare clinic. This repository contains full project documentation intended for handover to network operations, security teams, and auditors. The content below is an implementation-grade README prepared from the supplied project presentation and expanded into a complete operational document. 
+**Healthcare Clinic Network** — design, deploy, and operate a secure, resilient, and auditable network for a two-branch healthcare clinic. This repository contains full project documentation intended for handover to network operations, security teams, and auditors.
 
 ---
 
@@ -15,7 +15,7 @@ Provide a complete, production-ready specification and operational playbook to b
 * Centralizes security controls (FortiGate) and network management.
 * Supports growth, fault tolerance, and maintainability.
 
-This README covers architecture, addressing and VLAN plans, FortiGate integration, step-by-step deployment, testing/validation, monitoring and logging, operational runbooks, backup and change management, bill of materials, and handover checklist. It uses the presentation as the authoritative source for project goals and constraints and expands every section into actionable implementation guidance. 
+This README covers architecture, addressing and VLAN plans, FortiGate integration, step-by-step deployment, testing/validation, monitoring and logging, operational runbooks, backup and change management, bill of materials, and handover checklist.
 
 ---
 
@@ -63,7 +63,7 @@ This README covers architecture, addressing and VLAN plans, FortiGate integratio
 
 ### VLANs and subnets
 
-| VLAN ID | Name           | Usage / Policy summary                                 | Example Subnet (CIDR) |
+| VLAN ID | Name           | Usage / Policy summary                                 | Subnet (CIDR)         |
 | ------: | -------------- | ------------------------------------------------------ | --------------------: |
 |      21 | ADMINS         | Administrative staff, privileged access, low filtering |         10.10.21.0/24 |
 |      22 | CLINICAL       | Doctors & Nurses — allowed clinical and research sites |         10.10.22.0/24 |
@@ -73,13 +73,12 @@ This README covers architecture, addressing and VLAN plans, FortiGate integratio
 
 ## FortiGate integration — interface mapping and security design
 
-The presentation includes a sample FortiGate interface mapping (used here for guidance). Use vendor best practices for naming, zones, and role assignment. 
 
-### Example FortiGate physical/subinterface plan (conceptual)
+### FortiGate physical/subinterface plan
 
-* `port1` — Internet/WAN A — public/ISP link (example IP: 192.168.107.128/24 as shown in presentation; use your ISP-assigned IPs). 
-* `port2` — Internal LAN trunk to distribution switch (carry VLANs 10/20/30/40/50/60). Use 802.1Q subinterfaces or connect to a switch L3 SVI depending on design. 
-* `port3` — Secondary WAN or site-to-site peer (backup transit or other ISP) (example IP: 10.0.4.1/24 shown in presentation). 
+* `port1` — Internet/WAN A — public/ISP link (IP: 192.168.107.128/24 as shown in presentation; use your ISP-assigned IPs). 
+* `port2` — Internal LAN trunk to distribution switch (carry VLANs).
+* `port3` — Secondary WAN or site-to-site peer (backup transit or other ISP) (IP: 10.0.4.1/24). 
 
 ### Security profile plan
 
