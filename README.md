@@ -71,6 +71,9 @@ This README covers architecture, addressing and VLAN plans, FortiGate integratio
 
 ---
 
+<img width="1598" height="702" alt="Screenshot 2025-11-30 193655" src="https://github.com/user-attachments/assets/570b0e40-0c38-4fa2-8685-492b29469b66" />
+
+
 ## FortiGate integration — interface mapping and security design
 
 
